@@ -12,3 +12,4 @@ import matplotlib.pyplot as plt
 param = get_acsparam()
 with plt.rc_context(param):
 ```
+To use, simply put the folder to where python can find it.
