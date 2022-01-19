@@ -58,7 +58,10 @@ _default_params = { 'font.family': 'arial',
 available_width = { "single" : width_single_column,
                     "double" : width_double_column}
 
-def get_acsparameter(width:str = "single", n:int = 1, color_cycler = set1_cycler, square:bool = False, ratio: float = None) -> dict:
+available_color = { "line"  : set1_cycler, 
+                    "point" : tableau_cycler }
+
+def get_acsparameter(width:str = "single", n:int = 1, color: str = "line", square:bool = False, ratio: float = None) -> dict:
     """this function return rcParam with suitable setting for plots"""
     param = _default_params
     w = available_width[width]
@@ -71,7 +74,7 @@ def get_acsparameter(width:str = "single", n:int = 1, color_cycler = set1_cycler
     if ratio:
         h = w * ratio
     
-    param['axes.prop_cycle'] = color_cycler
+    param['axes.prop_cycle'] = available_color[color]
     param['figure.subplot.bottom'] = param['figure.subplot.left']
     param['figure.subplot.top'] = param['figure.subplot.right']
 
