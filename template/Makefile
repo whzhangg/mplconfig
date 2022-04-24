@@ -1,4 +1,4 @@
-targets = single_plot.pdf double_plot.pdf scatter.pdf histogram.pdf three_plot.pdf
+targets = single_plot.pdf double_plot.pdf scatter.pdf histogram.pdf three_plot.pdf broken_axis.pdf
 
 all: $(targets)
 
@@ -19,4 +19,7 @@ scatter.pdf: scatter.py
 
 histogram.pdf: histogram.py
 	python histogram.py
+
+broken_axis.pdf: broken_axis.py
+	python broken_axis.py
 
